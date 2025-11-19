@@ -13,10 +13,17 @@ Rails.application.routes.draw do
   get "restaurants", to: "restaurants#index"
 
   # A visitor can add a new restaurant, and be redirected to the show page of that restaurant
-  get "restaurants/new", to: "restaurants#new"
+  get "restaurants/new", to: "restaurants#new", as: :new_restaurant
   post "restaurants", to: "restaurants#create"
 
   # A visitor can see the details of a restaurant, with all the reviews related to that restaurant
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
 
+  # A visitor can add a new review to a restaurant
+  get "restaurants/:restaurant_id/new", to: "reviews#new", as: :new_restaurant_review
+  post "restaurants/:restaurant_id", to: "reviews#create", as: :restaurant_reviews
 end
+
+
+# restaurant_reviews
+# new_restaurant_review
