@@ -15,6 +15,20 @@
   </div>
 </div>
 
-
-<%# t.string "phone_number"
-    t.string "category" %>
+<h3>Reviews:</h3>
+<ul class="list-group">
+  <% @reviews.each do |review| %>
+    <li class="list-group-item">
+      <div class="list-group">
+        <div class="list-group-item">
+          <h4>Rating:</h4>
+          <p><%= review.rating %></p>
+        </div>
+        <div class="list-group-item">
+          <h4>Content:</h4>
+          <p><%= review.content %></p>
+        </div>
+      </div>
+      </li>
+  <% end %>
+</ul>
